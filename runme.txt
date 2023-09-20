@@ -1,0 +1,12 @@
+start_period=$1
+end_period=$2
+export PYTHONPATH=.
+python download_news.py --start_date "$start_period" --end_date "$end_period"
+dask-scheduler 2>/tmp/dask_scheduler.log&
+dask_ip=`grep "Scheduler at" /tmp/dask.log | cut -d" " -f10`
+dask-worker $dask_ip &
+python  parse_gkg.py "$start_period" "$end_period" $dask_ip
+./load_events.sh
+./load_gkg.sh
+./load_mentions.sh
+pkill dask

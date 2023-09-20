@@ -1,0 +1,7 @@
+Tone
+Positive Score
+Negative Score
+Polarity
+Activity Reference Density
+Self/Group Reference Density
+Word Count

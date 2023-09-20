@@ -1,0 +1,10 @@
+CountType
+Count
+ObjectType
+LocationType
+LocationFullName
+LocationCountryCode
+LocationADM1Code
+LocationLatitude
+LocationLongtitude
+LocationFeatureID

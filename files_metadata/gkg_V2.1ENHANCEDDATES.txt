@@ -1,0 +1,5 @@
+Date Resolution
+Month
+Day
+Year
+Offset

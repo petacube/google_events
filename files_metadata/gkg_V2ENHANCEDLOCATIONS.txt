@@ -1,0 +1,9 @@
+Location Type
+Location FullName
+Location CountryCode
+Location ADM1Code
+Location ADM2Code
+Location Latitude
+Location Longitude
+Location FeatureID
+

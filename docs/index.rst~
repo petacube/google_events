@@ -1,0 +1,33 @@
+.. Petacube Google Events processor documentation master file, created by
+   sphinx-quickstart on Tue Aug 27 21:09:26 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Petacube's Google Events processor's documentation!
+============================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+*Introduction*
+The GDELT Project - https://www.gdeltproject.org
+Petacube GDELT processor allows you to download, parse and ingest into structured data store 
+( eg Postgres) in real-time or in batch mode the GDELT feed.
+After ingestion,  dataset is broken into 19 tables: google_events ( which is main table), google_mentions ( this is supporting table) and 17 tables pertaining to Google Knowledge Graph (GKG). 
+
+The data is generated every 15min and available for download online. The amount of data will depend on your time horizon you want to study but assume every 15min slice is 7mb. Assuming you want to study a week worth of data
+the amount of storage you will need is 7 days*24h*4 times per hour x 7mb= 4.5G. 
+To ingest this amount of data on modern laptop will take 4-6hours of time. 
+
+
+*Usage*
+./process_google_events.py --start_date <some_start_date> --end_date <some_end_date> --file_types <all|events|gkg|mentions> --target_db<postgres|mariadb|sqlserver> --exec_framework <local|dask|spark> --master_node <protocol://host:port> 
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
